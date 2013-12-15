@@ -22,7 +22,8 @@ module.exports = function (grunt) {
 
     // Here below is straight up grunt uglify.
     this.files.forEach(function (file) {
-      var output;
+      var input = '';
+      var output = '';
       var src = file.src.filter(function (filepath) {
         // Remove invalid source files
         if (!grunt.file.exists(filepath)) {
@@ -35,19 +36,26 @@ module.exports = function (grunt) {
       });
 
       if (src.length === 0) {
-        grunt.log.warn('skipped ' + file.dest + ' because src files were empty.');
+        grunt.log.warn('No source files, skipping ' + file.dest + '.');
         return;
       }
 
+      // Load all the files into a single string
+      src.forEach(function (file) {
+        input += grunt.file.read(file);
+        input += '\n';
+      });
+
+      // Run Pixrem
       try {
-        output = pixrem(src, options.rootvalue, { replace: options.replace });
+        output = pixrem(input, options.rootvalue, { replace: options.replace });
       }
       catch (e) {
         var err = new Error('Pixrem failed.');
         console.log(e);
 
         if (e.message) {
-          err.message += '\n' + e.message + '. \n';
+          err.message += '\n' + e.message + '\n';
         }
 
         err.origError = e;
