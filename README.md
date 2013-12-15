@@ -24,6 +24,8 @@ _Run this task with the `grunt pixrem` command._
 
 Grunt-pixrem is a CSS post-processor that generates CSS with pixel fallbacks or replacements for rem units. Check the [browser data](http://caniuse.com/rem): if you want to use rem units and support < IE9, Opera Mini, or older Opera Mobile, this post-processor is for you.
 
+For the node library, see [node-pixrem](https://github.com/robwierzbowski/node-pixrem).
+
 ### Options
 
 #### rootvalue
