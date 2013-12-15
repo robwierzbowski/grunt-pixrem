@@ -22,83 +22,56 @@ grunt.loadNpmTasks('grunt-pixrem');
 
 _Run this task with the `grunt pixrem` command._
 
-<!-- This task helps you compile your Jekyll static site with Grunt.js. -->
+Grunt-pixrem is a CSS post-processor that generates CSS with pixel fallbacks or replacements for rem units. Check the [browser data](http://caniuse.com/rem): if you want to use rem units and support < IE9, Opera Mini, or older Opera Mobile, this post-processor is for you.
 
 ### Options
 
-<!-- Going to have to use file obj. -->
+#### rootvalue
 
-<!-- You can use all of the configuration options available in the [Jekyll Documentation](http://jekyllrb.com/docs/configuration/), as well as some special options provided by this plugin.
- -->
-<!-- #### src
+Type: `String`  
+Default: `16px`  
 
-Type: `string`
-Default: `.`
+The root element font size. Can be px, rem, em, percent, or unitless pixel value.
 
-Directory where Jekyll will read files.
+#### replace
 
-#### dest
+Type: `Boolean`  
+Default: `false`  
 
-Type: `string`
-Default: `./_site`
-
-Directory where Jekyll will write files.
- -->
+Replace rules containing rems instead of adding fallbacks. Useful if you are generating a no-rem only stylesheet.
 
 ## Usage examples
 
-### Example config
-<!-- 
+### Add fallbacks with a root em value of 1.75em
+
 ```js
 grunt.initConfig({
-  jekyll: {                   			// Task
-  	options: {							// Universal options
-        bundleExec: true,
-        src : '<%= app %>'
-  	},
-    dist: { 	                		// Target
-      options: {	           			// Target options
-    	dest: '<%= dist %>',
-		config: '_config.yml,_config.build.yml'
-      }
+  pixrem: {
+    options: {
+      rootvalue: '1.75em'
     },
-    serve: {                   			// Another target
-      options: {
-        dest: '.jekyll',
-        drafts: true
-      }
+    dist: {
+      src: 'app/css/main.css',
+      dest: 'dist/main.css'
     }
-  }
 });
-
-grunt.loadNpmTasks('grunt-jekyll');
-
-grunt.registerTask('default', ['jshint', 'jekyll']);
 ```
- -->
-### Example usage
 
-#### XXXX
-<!-- 
+### Create an IE8 / no-rem-support only stylesheet 
+
 ```js
 grunt.initConfig({
-  jekyll: {
+  pixrem: {
+    options: {
+      rootvalue: '85%',
+      replace: true
+    },
     dist: {
-      options: {
-        config: '_config.yml'.
-        // Construct a string with JavaScript.
-        // Remember, in YAML line breaks and indentation matter.
-		raw: 'pygments: false\n' +
-			 'exclude: [\'development\']\n' +
-			 'author:\n' +
-             '  name: ' + fetchAuthor() + '\n' +
-             '  email: ' + fetchEmail()
-        }
+      src: 'app/css/main.css',
+      dest: 'dist/main.css'
     }
-  }
 });
 ```
- -->
 
 ## Contribute
 
@@ -106,8 +79,8 @@ Report bugs and feature proposals in the [Github issue tracker](https://github.c
 
 ## Release History
 
-0.1.0, XXXX: Initial release.  
+0.1.0, Dec 15, 2013: Initial release.  
 
 ## License
 
-[BSD-NEW](http://en.wikipedia.org/wiki/BSD_License)
+[MIT](http://en.wikipedia.org/wiki/MIT_License)
