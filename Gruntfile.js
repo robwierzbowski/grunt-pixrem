@@ -7,36 +7,39 @@ module.exports = function (grunt) {
 			name: 'grunt-pixrem'
 		},
 
-		// jekyll: {
-		// 	options: {
-		// 		src: './test/app'
-		// 	},
-		// 	actual: {
-		// 		options: {
-		// 			dest: './test/actual'
-		// 		}
-		// 	},
-		// 	expected : {
-		// 		options: {
-		// 			dest: './test/expected'
-		// 		}
-		// 	}
-		// },
-
-		// mochaTest: {
-		// 	options: {
-		// 		reporter: 'list'
-		// 	},
-		// 	src: 'test/test.js'
-		// }
+    pixrem: {
+      defaults: {
+        src: 'test/css/one.css',
+        dest: 'test/result/defaults.css'
+      },
+      rootvalue: {
+        options: {
+          rootvalue: '1.75em'
+        },
+        src: 'test/css/one.css',
+        dest: 'test/result/rootvalue.css'
+      },
+      replace: {
+        options: {
+          replace: true
+        },
+        src: 'test/css/one.css',
+        dest: 'test/result/replace.css'
+      },
+      concat: {
+        src: [
+          'test/css/one.css',
+          'test/css/two.css'
+        ],
+        dest: 'test/result/concat.css'
+      }
+    }
 	});
 
 	grunt.loadTasks('tasks');
-	// grunt.loadNpmTasks('grunt-mocha-test');
 
 	grunt.registerTask('test', [
-		// 'jekyll:expected',
-		// 'mochaTest'
+    'pixrem'
 	]);
 
 	grunt.registerTask('default', 'test');
