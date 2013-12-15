@@ -11,7 +11,8 @@
   "bugs": "https://github.com/robwierzbowski/grunt-pixrem/issues",
   "licenses": [
     {
-      "type": "BSD-new"
+      "type": "MIT",
+      "url": "https://github.com/robwierzbowski/grunt-build-control/blob/master/LICENSE"
     }
   ],
 	"main": "grunt.js",
@@ -23,7 +24,7 @@
 		"pixrem": "~0.1"
 	},
 	"devDependencies": {
-		"grunt": "~0.4.1",
+		"grunt": "~0.4.1"
 	},
 	"peerDependencies": {
 		"grunt": "~0.4.1"
