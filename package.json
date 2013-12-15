@@ -1,0 +1,41 @@
+{
+	"name": "grunt-pixrem",
+  "description": "Generate pixel fallbacks for rem units with Grunt.",
+	"version": "0.1.0",
+  "homepage": "https://github.com/robwierzbowski/grunt-pixrem",
+  "author": "Rob Wierzbowski <hello@robwierzbowski.com> (http://robwierzbowski.com)",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/robwierzbowski/grunt-pixrem.git"
+  },
+  "bugs": "https://github.com/robwierzbowski/grunt-pixrem/issues",
+  "licenses": [
+    {
+      "type": "BSD-new"
+    }
+  ],
+	"main": "grunt.js",
+  "engines": {
+    "node": ">=0.10.0",
+    "npm": ">=1.2.10"
+  },
+	"dependencies": {
+		"pixrem": "~0.1"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.1",
+	},
+	"peerDependencies": {
+		"grunt": "~0.4.1"
+	},
+  "keywords": [
+    "css",
+    "parser",
+    "postproccessor",
+    "rem",
+    "responsive",
+    "grunt.js",
+    "grunt",
+    "gruntplugin"
+  ]
+}
