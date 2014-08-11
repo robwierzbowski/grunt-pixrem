@@ -56,6 +56,7 @@ grunt.initConfig({
       src: 'app/css/main.css',
       dest: 'dist/main.css'
     }
+  }
 });
 ```
 
@@ -72,6 +73,7 @@ grunt.initConfig({
       src: 'app/css/main.css',
       dest: 'dist/main.css'
     }
+  }
 });
 ```
 
