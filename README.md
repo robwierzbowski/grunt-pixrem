@@ -2,6 +2,10 @@
 
 > Generate pixel fallbacks for rem units with [Grunt](http://gruntjs.com/).
 
+## Semi-deprecated
+
+I'm not working on any ie8 projects anymore, so have no reason to use this code.If you find this code useful feel free to ping me and I'll hand the repo over to you.
+
 ## Getting Started
 
 This plugin requires [Grunt](http://gruntjs.com/) `~0.4.0`
