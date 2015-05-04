@@ -48,7 +48,7 @@ module.exports = function (grunt) {
 
       // Run Pixrem
       try {
-        output = pixrem(input, options.rootvalue, { replace: options.replace });
+        output = pixrem.process(input, options.rootvalue, { replace: options.replace });
       }
       catch (e) {
         var err = new Error('Pixrem failed.');
