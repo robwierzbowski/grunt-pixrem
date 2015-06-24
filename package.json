@@ -40,6 +40,6 @@
     "gruntplugin"
   ],
   "scripts": {
-    "test": "grunt"
+    "test": "grunt test"
   }
 }
